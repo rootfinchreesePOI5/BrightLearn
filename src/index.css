@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+@import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+@import "tailwindcss";
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Outfit' , 'JetBrains Mono';
+}
+
+/* Light Theme (Default) */
+:root {
+  --background-color: #f8f9fa;
+  --navbar-color: #ffffff44;
+  --text-primary: #000000;
+  --text-secondary: #555555;
+}
+
+/* Dark Theme */
+.dark-mode {
+  --background-color: #121212;
+  --navbar-color: #181818;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+}
+
+
+/* Apply variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.font-jet{
+  font-family: 'JetBrains Mono';
+}
+
+.firacode{
+  font-family: 'Fira Code';
+}
+
+.header{
+  background-color: rgba(237, 237, 237, 0.225);
+  backdrop-filter: blur(10px);
+  color: black;
+}
+
+.dark-header{
+  background-color: rgba(4, 4, 4, 0.679);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.bronze{
+  background-color: brown;
+}
+
+.sidelink.active{
+  color: rgb(255, 94, 0);
+}
+
+a hr{
+  display: none;
+}
+
+a.active hr{
+  height: 0.5vh;
+  display: flex;
+  background: #ff00ff;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+}
+
+a.active p{
+  color: #ff00ff;
+  transition: 0.4s ease-in-out;
+}

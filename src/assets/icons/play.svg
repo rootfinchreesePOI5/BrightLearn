@@ -1,0 +1,2 @@
+<input style={state === 'Login' ? {display:'none' } : {display:'flex'}} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Enter password' required />
+          <input style={state === 'Login' ? {display:'none' } : {display:'flex'}} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Confirm password' required />
