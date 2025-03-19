@@ -9,8 +9,8 @@ function Home() {
       <div style={token ? {display:'flex', flexDirection:'column'} : {display:'none' }} className='w-full'>
       <Hero/>
       </div>
-      <div style={token  ? {display:'none'} : {display:'flex'}} >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto non illo aliquid sed, blanditiis, at optio perferendis veniam placeat, quas ad cupiditate eius! Rerum natus exercitationem vero earum praesentium minus.
+      <div style={token  ? {display:'none'} : {display:'flex'}} className='!pt-[8rem] h-[80vh] flex items-center' >
+        <p className='text-sm text-gray-600'>You don't have an account.Create one and study!</p>
       </div>
     </div>
   )
