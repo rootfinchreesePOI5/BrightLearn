@@ -9,7 +9,7 @@ function Home() {
       <div style={token ? {display:'flex', flexDirection:'column'} : {display:'none' }} className='w-full'>
       <Hero/>
       </div>
-      <div style={token  ? {display:'none'} : {display:'flex'}} className='!pt-[8rem] h-[80vh] flex items-center' >
+      <div style={token  ? {display:'none'} : {display:'flex'}} className='!pt-[8rem] h-[80vh] flex items-center justify-center' >
         <p className='text-sm text-gray-600'>You don't have an account.Create one and study!</p>
       </div>
     </div>
