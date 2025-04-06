@@ -11,6 +11,7 @@
   font-family: 'Outfit' , 'JetBrains Mono';
 }
 
+
 /* Light Theme (Default) */
 :root {
   --background-color: #f8f9fa;
@@ -43,8 +44,8 @@ body {
 }
 
 .header{
-  background-color: rgba(237, 237, 237, 0.225);
-  backdrop-filter: blur(10px);
+  background-color: rgba(237, 237, 237, 0.653);
+  backdrop-filter: blur(50px);
   color: black;
 }
 
@@ -80,4 +81,17 @@ a.active hr{
 a.active p{
   color: #ff00ff;
   transition: 0.4s ease-in-out;
+}
+
+.mygrid{
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 0.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.customgrid{
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
 }

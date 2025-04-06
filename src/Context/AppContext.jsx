@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { logo } from "../assets/images";
+import { courses } from "../assets/assets";
 
 export const AppContext = createContext();
 
@@ -9,7 +10,6 @@ const AppProvider = ({ children }) => {
     const [Auth, setAuth] = useState(true);
     const [page, setPage] = useState(1);
     const [sidemenu, setMenu] = useState(false);
-
     //change sidebar display
     const openMenu = () => {
         sidemenu === false ? setMenu(true) : setMenu(false);
@@ -18,14 +18,14 @@ const AppProvider = ({ children }) => {
 
     //userdata
     const userData = {
-        name: 'Ranjit',
+        name: 'Abdiaziz',
         img: logo,
         email: 'mohamedadbiaziz515@gmail.com',
         gender: 'Male',
         Experience: 1,
         category: 'Student',
         badges: 2,
-        points: 10
+        points: 120
     };
 
     // Sync token with localStorage
@@ -49,7 +49,7 @@ const AppProvider = ({ children }) => {
         setPage,
         sidemenu,
         setMenu,
-        openMenu
+        openMenu,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

@@ -10,7 +10,7 @@ function LeaderBoard() {
         { name: "John Doe", points: 250, badges: 95 },
         { name: "Chris", points: 200, badges: 85 },
         { name: "Alex", points: 170, badges: 65 },
-        { name: "Ranjit", points: 120, badges: 25 },
+        { name: "Abdiaziz", points: 120, badges: 2 },
         { name: "Jane Smith", points: 110, badges: 45 },
         { name: "Emma", points: 100, badges: 20 },
     ]);

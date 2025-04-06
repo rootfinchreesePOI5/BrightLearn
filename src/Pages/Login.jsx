@@ -11,13 +11,15 @@ function Login() {
   const { token, setToken } = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error , setError] = useState('');
+  const [confirm , setConfirm] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     const user = await signIn(email, password);
     if (user) {
-      toast.success("User signed in:", user);
+      toast.success("Welcome Back! 🥳", user);
       setToken(user.accessToken); // Store token if using context
       navigate("/"); // Redirect after login
     } else {
@@ -27,11 +29,15 @@ function Login() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const user = await signUp(email, password);
+    if(confirm !== password){
+      setError("Password doesn't match! Try again.");
+    }else{
+      const user = await signUp(email, password);
+    }
     if (user) {
       toast.success("User signed up:", user);
       setToken(user.accessToken); // Store token if using context
-      navigate("/"); // Redirect after signup
+      navigate("/setup-account"); // Redirect after signup
     } else {
       toast.error("Sign-up failed! Try again.");
     }
@@ -73,13 +79,14 @@ function Login() {
           <hr className="h-[1px] border-0 bg-gray-200 flex-grow" />
         </div>
         <form className='w-full md:w-[80%] flex flex-col gap-3' onSubmit={state === 'Login' ? handleLogin : handleSignUp}>
-          <input onChange={(e) => setEmail(e.target.value)} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="text" placeholder='Email Address' required />
-          <input onChange={(e) => setPassword(e.target.value)} style={state === 'Login' ? { display: 'flex' } : { display: 'none' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Enter password' required />
+          <input onChange={(e) => setEmail(e.target.value)} autoComplete='email' className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="text" placeholder='Email Address' required />
+          <input onChange={(e) => setPassword(e.target.value)} autoComplete='current-password' style={state === 'Login' ? { display: 'flex' } : { display: 'none' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Enter password' required />
           {
             state !== 'Login' && (
               <>
-                <input style={state === 'Login' ? { display: 'none' } : { display: 'flex' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Enter password' required />
-                <input style={state === 'Login' ? { display: 'none' } : { display: 'flex' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" placeholder='Confirm password' required />
+                <input id='pass1' onChange={(e) =>setPassword(e.target.value)} autoComplete='new-password' style={state === 'Login' ? { display: 'none' } : { display: 'flex' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" name='make-password' placeholder='Enter password' required />
+                <input id='pass2' onChange={(e) =>setConfirm(e.target.value)} autoComplete='confirm-password' style={state === 'Login' ? { display: 'none' } : { display: 'flex' }} className='text-sm h-[4.75vh] !px-2 bg-gray-100 rounded-sm outline-gray-500 border-[1px] border-gray-300' type="password" name='confirm-pass' placeholder='Confirm password' required />
+                <p className='text-xs text-red-500'>{error}</p>
               </>
             )
           }

@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../Context/AppContext';
-import { coin, goldBadge } from '../assets/images';
+import { AppContext } from '../Context/AppContext'; 
 
 function PBC() {
-    const { page, setPage, openMenu } = useContext(AppContext);
+    const { page, setPage, openMenu , userData} = useContext(AppContext);
     const [points, setPoints] = useState(10);
     const [badges, setBadges] = useState(
         [
@@ -24,36 +23,34 @@ function PBC() {
     return (
         <div className='flex items-center gap-3'>
             {/* points */}
-            <div className='!p-2 rounded-sm border-gray-400 hover:bg-cyan-200  duration-500 transition-all text-gray-900 border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
+            <div className='!p-2 rounded-sm border-gray-400   text-gray-900 border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
                 {
                     points < 1 ?
                         <button className='cursor-pointer text-xs md:text-sm   bg-transparent'>Get Points</button> :
                         <div className='flex items-center gap-1 text-sm' onClick={() => { setPage(2), openMenu() }} >
-                            <span className='md:text-xl text-pink-500'>10</span>
+                            <span className='text-sm text-pink-500'>{userData.points}</span>
                             <p >points</p>
-                            <img src={coin} alt="" />
                         </div>
                 }
             </div>
             {/* Badges*/}
-            <div className='!p-2 rounded-sm border-gray-400 hover: text-gray-900 hover:bg-yellow-200  duration-500 transition-all border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
+            <div className='!p-2 rounded-sm border-gray-400 hover: text-gray-900    border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
                 {
                     badges.length <= 0 ?
                         <button className='cursor-pointer text-xs md:text-sm    bg-transparent'>Get A Badge</button> :
                         <div onClick={() => { setPage(2), openMenu() }} className='flex items-center gap-1'>
-                            <span className=' md:text-xl text-pink-500'>{badges.length}</span>
+                            <span className=' text-sm text-pink-500'>{badges.length}</span>
                             <p>badges</p>
-                            <img className='w-5' src={goldBadge} alt="" />
                         </div>
                 }
             </div>
             {/* certificates */}
-            <div className='!p-2 rounded-sm border-gray-400 hover:bg-emerald-200  duration-500 transition-all text-gray-900 border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
+            <div className='!p-2 rounded-sm border-gray-400   text-gray-900 border-[1.5px] h-[6vh] max-w-[100%] cursor-pointer'>
                 {
                     cert <= 0 ?
                         <button className='cursor-pointer text-xs md:text-sm    bg-transparent'>Get your Cert</button> :
                         <div onClick={() => { setPage(2), openMenu() }} className='flex items-center gap-1'>
-                            <span className='text-xl text-pink-500'>{cert.length}</span>
+                            <span className='text-sm text-pink-500'>{cert.length}</span>
                             <img src="" alt="" />
                             <p>certs</p>
                         </div>

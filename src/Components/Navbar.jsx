@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { client1, cloud, dot, dotB, fire, github, lms, logo, logout, menuB, menuW, react, setting, xB, xW } from '../assets/images'
 import { AppContext } from '../Context/AppContext'
-import { components, sidelinks } from '../assets/assets';
+import { sidelinks } from '../assets/assets';
 import { logOut } from '../auth';
 import { toast } from 'sonner';
 import LeaderBoard from './LeaderBoard.jsx';
@@ -10,6 +10,7 @@ import LeaderBoard from './LeaderBoard.jsx';
 
 function Navbar() {
   const { token, setToken, theme, page, setPage, sidemenu, setMenu , openMenu } = useContext(AppContext);
+  
 
   const [status, setStatus] = useState('Logout');
   const handleLogout = async () => {
@@ -18,7 +19,7 @@ function Navbar() {
       setMenu(false);
       localStorage.removeItem('token');
       setToken('');
-      toast.success("User signed out successfully");
+      toast.success("User signed out successfully. 😒");
       navigate("/Login");
     } catch (error) {
       toast.error('Error logging out!')
@@ -32,7 +33,7 @@ function Navbar() {
   };
   const navigate = useNavigate();
   return (
-    <header className={`flex justify-between items-center !py-2 !px-[5%]`}>
+    <header className={`flex justify-between items-center !py-2 z !px-[5%]`}>
       <div className='flex items-center gap-1' onClick={() => { navigate('/'), scrollTo(0, 0) }}>
         <img className='w-8' src={cloud} alt="" />
         <h1>BrightLearn</h1>

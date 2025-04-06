@@ -3,6 +3,7 @@ import mypf from "../assets/images/logo.png";
 import rolls from "../assets/images/rollsroyce.jpg";
 import unicron from "../assets/images/unicron.jpg";
 import ua from "../assets/images/ua.jpg";
+import htmlBook from '../assets/images/htmlbook.jpg'
 import feelHealthy from "../assets/images/feelhealthy.jpg";
 import client1 from "../assets/images/client1.jpg";
 import client2 from "../assets/images/client2.jpg";
@@ -59,6 +60,12 @@ import coin from "../assets/icons/coin.svg";
 import platinumBadge from '../assets/icons/platinum.svg' 
 import goldBadge from '../assets/icons/gold.svg' 
 import diamondBadge from '../assets/icons/diamond.svg'
+import book from '../assets/icons/book.svg'
+import clock from '../assets/icons/clock.svg'
+import down from '../assets/icons/down.svg'
+import up from '../assets/icons/up.svg'
+import chat from '../assets/icons/chat.svg'
+import jsbook from '../assets/images/jsbook.jpg'
 export {
   mypf,
   sun,
@@ -118,5 +125,12 @@ export {
   platinumBadge,
   goldBadge,
   diamondBadge,
-  coin
+  coin,
+  book,
+  clock,
+  up,
+  down,
+  chat,
+  htmlBook,
+  jsbook
 };
