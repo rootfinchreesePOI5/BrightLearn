@@ -182,61 +182,61 @@ export const courses = [
         week: 1,
         topic: "Introduction to HTML",
         content: [
-          { name: "What is HTML?", duration: 1 },
-          { name: "Setting Up an HTML File", duration: 2 },
-          { name: "HTML Elements & Tags", duration: 2 },
-          { name: "Block vs Inline Elements", duration: 2 },
-          { name: "Attributes & Metadata", duration: 3 }
+          { name: "What is HTML?", duration: 1 , completed: false },
+          { name: "Setting Up an HTML File", duration: 2 , completed: false},
+          { name: "HTML Elements & Tags", duration: 2 , completed: false},
+          { name: "Block vs Inline Elements", duration: 2 , completed: false},
+          { name: "Attributes & Metadata", duration: 3 , completed: false}
         ]
       },
       {
         week: 2,
         topic: "HTML Text & Formatting",
         content: [
-          { name: "Headings & Paragraphs", duration: 1 },
-          { name: "Lists (Ordered & Unordered)", duration: 2 },
-          { name: "Text Formatting (Bold, Italics, Underline)", duration: 2 },
-          { name: "HTML Entities & Symbols", duration: 2 }
+          { name: "Headings & Paragraphs", duration: 1 , completed: false},
+          { name: "Lists (Ordered & Unordered)", duration: 2 , completed: false},
+          { name: "Text Formatting (Bold, Italics, Underline)", duration: 2 , completed: false},
+          { name: "HTML Entities & Symbols", duration: 2 , completed: false}
         ]
       },
       {
         week: 3,
         topic: "HTML Links, Images & Media",
         content: [
-          { name: "Anchor Tags & External Links", duration: 2 },
-          { name: "Internal Links & Navigation", duration: 2 },
-          { name: "Adding Images & Optimization", duration: 2 },
-          { name: "Embedding Videos & Audio", duration: 3 }
+          { name: "Anchor Tags & External Links", duration: 2 , completed: false},
+          { name: "Internal Links & Navigation", duration: 2 , completed: false},
+          { name: "Adding Images & Optimization", duration: 2 , completed: false},
+          { name: "Embedding Videos & Audio", duration: 3 , completed: false}
         ]
       },
       {
         week: 4,
         topic: "HTML Tables & Forms",
         content: [
-          { name: "Creating Tables (Rows & Columns)", duration: 2 },
-          { name: "Table Headers, Footers & Borders", duration: 2 },
-          { name: "Form Elements (Inputs, Buttons, Labels)", duration: 2 },
-          { name: "Form Validation & Attributes", duration: 3 }
+          { name: "Creating Tables (Rows & Columns)", duration: 2 , completed: false},
+          { name: "Table Headers, Footers & Borders", duration: 2 , completed: false},
+          { name: "Form Elements (Inputs, Buttons, Labels)", duration: 2 , completed: false},
+          { name: "Form Validation & Attributes", duration: 3 , completed: false}
         ]
       },
       {
         week: 5,
         topic: "HTML Advanced Topics",
         content: [
-          { name: "HTML5 Semantic Elements", duration: 2 },
-          { name: "Accessibility & ARIA", duration: 2 },
-          { name: "SEO Best Practices", duration: 2 },
-          { name: "Meta Tags & Open Graph Protocol", duration: 3 }
+          { name: "HTML5 Semantic Elements", duration: 2 , completed: false},
+          { name: "Accessibility & ARIA", duration: 2 , completed: false},
+          { name: "SEO Best Practices", duration: 2 , completed: false},
+          { name: "Meta Tags & Open Graph Protocol", duration: 3 , completed: false}
         ]
       },
       {
         week: 6,
         topic: "Building a Full HTML Website",
         content: [
-          { name: "Creating a Homepage", duration: 3 },
-          { name: "Building a Contact Page", duration: 3 },
-          { name: "Adding Navigation & Footer", duration: 3 },
-          { name: "Deploying Your Website", duration: 3 }
+          { name: "Creating a Homepage", duration: 3 , completed: false},
+          { name: "Building a Contact Page", duration: 3 , completed: false},
+          { name: "Adding Navigation & Footer", duration: 3 , completed: false},
+          { name: "Deploying Your Website", duration: 3 , completed: false}
         ]
       }
     ],
@@ -294,82 +294,82 @@ export const courses = [
           week: 1,
           topic: "JavaScript Fundamentals",
           content: [
-            { name: "What is JavaScript?", duration: 1 },
-            { name: "Setting Up JavaScript in HTML", duration: 1 },
-            { name: "Variables & Data Types", duration: 2 },
-            { name: "Operators & Expressions", duration: 2 },
-            { name: "Conditionals (if, else, switch)", duration: 2 },
-            { name: "Loops (for, while, do-while)", duration: 3 }
+            { name: "What is JavaScript?", duration: 1 , completed: false},
+            { name: "Setting Up JavaScript in HTML", duration: 1 , completed: false},
+            { name: "Variables & Data Types", duration: 2 , completed: false},
+            { name: "Operators & Expressions", duration: 2 , completed: false},
+            { name: "Conditionals (if, else, switch)", duration: 2 , completed: false},
+            { name: "Loops (for, while, do-while)", duration: 3 , completed: false}
           ]
         },
         {
           week: 2,
           topic: "Functions & Scope",
           content: [
-            { name: "Declaring Functions", duration: 2 },
-            { name: "Function Parameters & Return Values", duration: 2 },
-            { name: "Arrow Functions", duration: 2 },
-            { name: "Scope & Closures", duration: 3 }
+            { name: "Declaring Functions", duration: 2 , completed: false},
+            { name: "Function Parameters & Return Values", duration: 2 , completed: false},
+            { name: "Arrow Functions", duration: 2 , completed: false},
+            { name: "Scope & Closures", duration: 3 , completed: false}
           ]
         },
         {
           week: 3,
           topic: "JavaScript Arrays & Objects",
           content: [
-            { name: "Creating & Accessing Arrays", duration: 2 },
-            { name: "Array Methods (map, filter, reduce)", duration: 3 },
-            { name: "Objects & Properties", duration: 2 },
-            { name: "Object Methods & Prototypes", duration: 3 }
+            { name: "Creating & Accessing Arrays", duration: 2 , completed: false},
+            { name: "Array Methods (map, filter, reduce)", duration: 3 , completed: false},
+            { name: "Objects & Properties", duration: 2 , completed: false},
+            { name: "Object Methods & Prototypes", duration: 3 , completed: false}
           ]
         },
         {
           week: 4,
           topic: "DOM Manipulation & Events",
           content: [
-            { name: "Selecting & Modifying Elements", duration: 3 },
-            { name: "Event Listeners & Handling Events", duration: 3 },
-            { name: "Creating & Removing Elements", duration: 3 },
-            { name: "Working with Forms & Validation", duration: 3 }
+            { name: "Selecting & Modifying Elements", duration: 3 , completed: false},
+            { name: "Event Listeners & Handling Events", duration: 3 , completed: false},
+            { name: "Creating & Removing Elements", duration: 3 , completed: false},
+            { name: "Working with Forms & Validation", duration: 3 , completed: false}
           ]
         },
         {
           week: 5,
           topic: "ES6+ & Modern JavaScript",
           content: [
-            { name: "Template Literals & Destructuring", duration: 2 },
-            { name: "Spread & Rest Operators", duration: 2 },
-            { name: "Promises & Async/Await", duration: 3 },
-            { name: "Modules & Import/Export", duration: 3 }
+            { name: "Template Literals & Destructuring", duration: 2 , completed: false},
+            { name: "Spread & Rest Operators", duration: 2 , completed: false},
+            { name: "Promises & Async/Await", duration: 3 , completed: false},
+            { name: "Modules & Import/Export", duration: 3 , completed: false}
           ]
         },
         {
           week: 6,
           topic: "JavaScript APIs & Fetch",
           content: [
-            { name: "Making HTTP Requests (Fetch API)", duration: 3 },
-            { name: "Working with JSON", duration: 2 },
-            { name: "LocalStorage & SessionStorage", duration: 2 },
-            { name: "Geolocation & Web APIs", duration: 3 }
+            { name: "Making HTTP Requests (Fetch API)", duration: 3 , completed: false},
+            { name: "Working with JSON", duration: 2 , completed: false},
+            { name: "LocalStorage & SessionStorage", duration: 2 , completed: false},
+            { name: "Geolocation & Web APIs", duration: 3 , completed: false}
           ]
         },
         {
           week: 7,
           topic: "Advanced JavaScript Concepts",
           content: [
-            { name: "Prototypes & Inheritance", duration: 3 },
-            { name: "Event Bubbling & Delegation", duration: 2 },
-            { name: "Error Handling & Debugging", duration: 3 },
-            { name: "Performance Optimization", duration: 3 }
+            { name: "Prototypes & Inheritance", duration: 3 , completed: false},
+            { name: "Event Bubbling & Delegation", duration: 2 , completed: false},
+            { name: "Error Handling & Debugging", duration: 3 , completed: false},
+            { name: "Performance Optimization", duration: 3 , completed: false}
           ]
         },
         {
           week: 8,
           topic: "Building JavaScript Projects",
           content: [
-            { name: "Building a To-Do App", duration: 3 },
-            { name: "Creating a Weather App using APIs", duration: 3 },
-            { name: "JavaScript Calculator", duration: 3 },
-            { name: "Deploying a JavaScript Project", duration: 3 }
+            { name: "Building a To-Do App", duration: 3 , completed: false},
+            { name: "Creating a Weather App using APIs", duration: 3 , completed: false},
+            { name: "JavaScript Calculator", duration: 3 , completed: false},
+            { name: "Deploying a JavaScript Project", duration: 3 , completed: false}
           ]
         }
       ],

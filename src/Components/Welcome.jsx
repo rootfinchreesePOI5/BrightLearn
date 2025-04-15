@@ -7,9 +7,9 @@ import { wave } from '../assets/images';
 
 function Welcome() {
     const [dropdown, setdropdown] = useState(false);
-    const [textValue , setText] = useState('');
+    const [textValue, setText] = useState('');
     const opendropdown = () => {
-        dropdown === false  ? setdropdown(true) : setdropdown(false)
+        dropdown === false ? setdropdown(true) : setdropdown(false)
     }
     const navigate = useNavigate();
     return (
@@ -20,18 +20,21 @@ function Welcome() {
                 <p className='text-sm text-center text-gray-500'>Amazing instructors, interactive content, and a supportive community to help you achieve your goals.</p>
             </div>
             <div className='flex relative justify-between bg-white border border-gray-300 !p-3 rounded md:w-[70%]'>
-                <input onClick={opendropdown} value={textValue} className='bg-transparent outline-none w-full' type="text" placeholder='Search for a Course' />
-                <ul style={dropdown === false ? {display:'none'} : {display:'flex'}} className='absolute top-full left-0 border border-gray-300 !p-3 rounded flex flex-col gap-2 bg-white w-full '>
+                <p onClick={opendropdown} className='flex items-center cursor-pointer text-gray-500 outline-none w-full'>
+                    {textValue || 'Search for a Course'}
+                </p>
+
+                <ul style={dropdown === false ? { display: 'none' } : { display: 'flex' }} className='absolute top-full left-0 border border-gray-300 !p-3 rounded flex flex-col gap-2 bg-white w-full '>
                     {
-                        courses.map((item , index) => {
+                        courses.map((item, index) => {
                             return <li onClick={() => [setText(item.name), opendropdown()]} className='text-sm cursor-pointer !p-3 border-b border-b-gray-100' key={index}>{item.name}</li>
                         })
                     }
                 </ul>
                 <button onClick={() => navigate(`/Courses/${textValue}`)} className='w-[120px] h-[5vh] bg-pink-500 text-white text-sm rounded active:scale-[0.98] cursor-pointer transition-all duration-500'>Search</button>
             </div>
-            <Courses/>
-            <Testimonials/>
+            <Courses />
+            <Testimonials />
         </div>
     )
 }

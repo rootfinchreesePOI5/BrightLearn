@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { courses } from '../assets/assets';
 import { book, down, up } from '../assets/images';
+import { AppContext } from '../Context/AppContext';
+import { toast } from 'sonner';
 
 function Course() {
     const { id: params } = useParams();
     const navigate = useNavigate();
     const [selected, setSelected] = useState([]);
     const [openIndex, setOpenIndex] = useState(null);
+    const {token} = useContext(AppContext);
 
     useEffect(() => {
         if (params) {
@@ -18,6 +21,16 @@ function Course() {
     const toggleSection = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
+
+    const newEnroll = (name) =>{
+        if(!token){
+            toast.error('Sign in to enroll');
+            navigate('/Login')
+        }
+        else{
+            navigate(`/Enroll/${name}`);
+        }
+    }
 
     return (
         <div className='flex flex-col !pt-[5rem] md:!pt-0 gap-6'>
@@ -45,7 +58,7 @@ function Course() {
                                     <p className='flex items-center gap-2 text-sm text-zinc-500'><img className='w-5' src={book} alt="" />{item.length} videos</p>
                                     <p className='tex-xs text-zinc-700 flex items-center gap-3'>Category: <span className='text-pink-500 underline'>{item.category}</span></p>
                                     <p className='tex-xs text-zinc-700 flex items-center gap-3'>Deadline: <span className='text-pink-500 underline'>{item.deadline}</span></p>
-                                    <button className='rounded bg-pink-500 text-white w-full cursor-pointer active:scale-95 duration-300 transition-all h-[5vh]'>Enroll Now</button>
+                                    <button onClick={() =>{newEnroll(item.name) , scrollTo(0 , 0)}} className='rounded bg-pink-500 text-white w-full cursor-pointer active:scale-95 duration-300 transition-all h-[5vh]'>Enroll Now</button>
                                 </div>
                             </div>
                             <div className='flex flex-col gap-5'>

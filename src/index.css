@@ -85,8 +85,8 @@ a.active p{
 
 .mygrid{
   display: grid;
-  grid-template-columns: 0.5fr 3fr 0.5fr;
-  gap: 3rem;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 1rem;
   align-items: center;
 }
 

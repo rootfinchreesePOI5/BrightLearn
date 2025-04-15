@@ -53,7 +53,7 @@ function Navbar() {
               <img style={theme === 'light' ? { display: 'flex' } : { display: 'none' }} onClick={() =>{openMenu(), setPage(1)}} src={sidemenu === false ? dot : xW} alt="" />
               <img style={theme === 'light' ? { display: 'none' } : { display: 'flex' }} onClick={openMenu} src={sidemenu === false ? dotB : xB} alt="" />
             </div> :
-            <button onClick={() => navigate('/Login')} className='bg-pink-500 text-white !py-2 text-sm !px-8 rounded-full active:scale-95 md:hover:bg-black transition-all duration-700 cursor-pointer'>Create Account</button>
+            <button onClick={() => {navigate('/Login') , scrollTo(0 , 0)}} className='bg-pink-500 text-white !py-2 text-sm !px-8 rounded-full active:scale-95 md:hover:bg-black transition-all duration-700 cursor-pointer'>Create Account</button>
         }
       </nav>
       <aside className={`absolute top-[101%] transition-all duration-700 ${sidemenu === false ? '-right-[100%]' : 'right-0'} w-full md:w-[25%] bg-white !p-6 h-screen flex flex-col gap-[12rem] md:gap-[14rem]`}>
@@ -71,7 +71,7 @@ function Navbar() {
                     </ul>
                   })
                 }
-                <button onClick={() => handleLogout()} className='sidelink flex items-center gap-3 cursor-pointer'>
+                <button onClick={() => {handleLogout() , scrollTo(0 , 0)}} className='sidelink flex items-center gap-3 cursor-pointer'>
                   <img className='w-5' src={logout} alt="" />
                   <li className='text-sm text-gray-800 hover:text-orange-500 transition-all duration-500 list-none'>LogOut</li>
                 </button>

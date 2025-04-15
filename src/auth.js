@@ -1,5 +1,6 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import app from "./firebase"; // Ensure firebase is correctly imported
+import { toast } from "sonner";
 
 // Initialize Firebase Auth
 const auth = getAuth(app);
@@ -44,5 +45,20 @@ export const logOut = async () => {
     await signOut(auth);
   } catch (error) {
     console.error("Error signing out:", error.message);
+  }
+};
+
+//reset password
+export const resetPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    toast.message("Password reset email sent. Check your inbox.");
+  } catch (error) {
+    if (error.code === 'auth/user-not-found') {
+      toast.error("No account found with that email.");
+    } else {
+      console.error("Error resetting password:", error);
+      toast.error("Error resetting password");
+    }
   }
 };

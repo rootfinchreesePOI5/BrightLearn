@@ -31,7 +31,7 @@ function App() {
   }
   return (
     <div>
-      <Toaster  position='bottom-right'  richColors/>
+      <Toaster  position='top-center'  richColors closeButton/>
       <div className={`flex flex-col fixed w-full z-50  ${theme === 'light' ? 'header' : 'dark-header'}`}>
         <Navbar />
         <Nav />

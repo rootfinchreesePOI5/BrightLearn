@@ -31,11 +31,10 @@ function Ongoing() {
               <div className='flex flex-col gap-3 !p-3'>
                 {
                   OngoingClasses.map((item, index) => {
-                    return <div className='mygrid !p-2 border border-gray-200 rounded-sm' key={index}>
-                      <img className='max-w-[150px] rounded-md' src={item.img} alt="" />
-                      <div className='flex justify-between w-full'>
+                    return <div className='mygrid w-[70%] !p-2 border border-gray-200 rounded-sm' key={index}>
+                      <img className='max-h-[30vh] w-[50%] rounded-md' src={item.img} alt="" />
+                      <div className='flex justify-between gap-5'>
                         <p className='text-xs flex flex-col gap-5 text-zinc-400'>Course <span className='text-sm font-medium text-black '>{item.name}</span></p>
-                        <p className='text-xs flex flex-col gap-5 text-zinc-400'>Content <span className=' font-medium text-black flex items-center gap-3'><img className='w-5' src={book} alt="" /> {item.length} videos</span></p>
                         <div className='text-xs flex flex-col gap-5 text-zinc-400'>Completion
                           <div className=' font-medium text-black '>
                             {
@@ -45,9 +44,7 @@ function Ongoing() {
                             }
                           </div>
                         </div>
-                        <p className='text-xs flex flex-col gap-5 text-zinc-400'>Deadline <span className=' font-medium text-black flex items-center gap-3'><img className='w-5' src={clock} alt="" />{item.deadline}</span></p>
-                      </div>
-                      <button className='!px-5 w-full h-10 rounded-sm !p-1 text-sm cursor-pointer  border border-zinc-300'>
+                      <button className='!px-5  h-10 rounded-sm !p-1 text-sm cursor-pointer  border border-zinc-300'>
                         {
                           item.completion === 0 ?
                             'Start'
@@ -55,6 +52,7 @@ function Ongoing() {
                             'Continue'
                         }
                       </button>
+                      </div>
                     </div>
                   })
                 }
